@@ -5,7 +5,7 @@ from random import *
 
 
 @numba.jit(nopython=True)
-def calc_pi(pi,N_total):
+def calc_pi(N_total):
     N_acc = 0
     for i in range(0, N_total):
         x = random()
@@ -15,9 +15,6 @@ def calc_pi(pi,N_total):
     pi = 4*N_acc/N_total
     return pi
 
-pi = math.pi
 for N_total in [10,10**2,10**3,10**4,10**5,10**6]:
-    Pi = calc_pi(pi,N_total)
+    Pi = calc_pi(N_total)
     print("Total number of points = {}\nValue of Pi = {}\n".format(N_total,Pi))
-
-
