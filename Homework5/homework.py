@@ -9,14 +9,20 @@ import sys
 
 path = '/home/pratixan/win-home/user/Downloads'
 
-def find_pdf_size(top): 
-    for filename in os.listdir(top):      #iterating through the directory
-        base = filename        
-        full_path = os.path.join(top, base)
-        if os.path.splitext(base)[1] == '.pdf':
-            print('File: {}\nSize: {} Bytes\n'.format(base,os.path.getsize(full_path)))
+def find_pdf_size(top):
+    size = 0
+    for root, dirs, files in os.walk(top, topdown=True):      #iterating through the directory
+        #print(root)
+        #print(dirs)
+        #print(files)
+        for name in files:
+            full_path = os.path.join(root, name)
+            if os.path.splitext(name)[1] == '.pdf':
+                print('File: {}\nSize: {} Bytes\n'.format(name,os.path.getsize(full_path)))
+                size += os.path.getsize(full_path)
+    return size/10**6
 
-find_pdf_size(path)
+print('Total size of PDF files in the directory is {} MB'.format(find_pdf_size(path)))
 
 
 # EXERCISE 5.2
