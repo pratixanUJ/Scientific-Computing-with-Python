@@ -30,5 +30,4 @@ c = complex_grid(-2,1,-2,2,grid_points=1024) #creating the grid of complex numbe
 plt.imshow(converge(c,iter=50), cmap = "RdBu")
 plt.axis("off")
 plt.title("Mandelbrot Set")
-plt.show()
 plt.savefig("Mandelbrot.jpg")
