@@ -37,7 +37,7 @@ args = parser.parse_args()
 c = complex_grid(-2,1,-2,2,args.d) #creating the grid of complex numbers to be used for generating the set
 
 # Plotting
-plt.imshow(converge(c,args.N), cmap = "RdBu")
+plt.imshow(converge(c,args.N), cmap = "binary")
 plt.axis("off")
 plt.title("Mandelbrot Set")
 plt.savefig("Mandelbrot.jpg")
