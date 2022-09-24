@@ -21,10 +21,7 @@ def complex_grid(xmin, xmax, ymin, ymax, grid_points):
 
 # Checking convergence of the complex point C
 def converge(c,num_iter):
-    j = 0
-    while j<=num_iter:
-        val = z(j,c)
-        j+=1
+    val = z(num_iter,c)
     return abs(val) <= 2
 
 #Passing the parameter values as arguments
