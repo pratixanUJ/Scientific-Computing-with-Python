@@ -21,12 +21,11 @@ def complex_grid(xmin, xmax, ymin, ymax, grid_points):
 
 # Checking convergence of the complex point C
 def converge(c,num_iter):
-    z = 0 #initial point
     j = 0
     while j<=num_iter:
-        z = z**2 + c
-        j+= 1
-    return abs(z) <= 2
+        val = z(j,c)
+        j+=1
+    return abs(val) <= 2
 
 #Passing the parameter values as arguments
 parser = argparse.ArgumentParser(description='Argument parameters to generate the Mandelbrot Set')
